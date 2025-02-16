@@ -24,7 +24,7 @@ const SideMenu = () => {
   return (
     <div className='side-menu-container'>
         <div className="logo-container">
-            <h1 className='logox'>PM</h1>
+            <h1 className='logox'>Quiz Portal</h1>
         </div>
         <div className="side-menu">
             {menu.map((m,index)=>(

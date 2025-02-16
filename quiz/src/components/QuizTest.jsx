@@ -19,10 +19,15 @@ const QuizTest = () => {
         // if (currentItem === values.length - 1) {
         //     setResultFlag(true);
         // }
-        if (currentItem === values.length - 1) {
-            setEnable(true);
+        if (currentItem === values.length - 1 ) {
             setCurrentItem(values.length - 1);
+
         }
+        else if(answerList.length === values.length - 1)
+        {
+            setEnable(true);
+        }
+        console.log(answerList)
     }
     const [message, setMessage] = useState("")
     const handleResult = () => {
@@ -43,6 +48,11 @@ const QuizTest = () => {
         setMessage("Failed");
        }
     }
+
+    const handleQuestionId = (questionDetails)=>{
+        console.log(questionDetails)
+        setCurrentItem(questionDetails.id - 1);
+    }
     return (
         <div className='test-container'>
             <h1 className='heading'>{title}</h1>
@@ -54,7 +64,7 @@ const QuizTest = () => {
                 <>
                     <div className="quiz-list-button">
                         {quizValue[0].questions.map((question, index) => (
-                            <button className='list-button' key={index}>{question.id}</button>
+                            <button className='list-button' key={index} onClick={()=> {handleQuestionId(question)}}>{question.id}</button>
                         ))}
                     </div>
                     <div className="qna-container">
