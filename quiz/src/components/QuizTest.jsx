@@ -16,16 +16,9 @@ const QuizTest = () => {
         console.log(optionValue)
         setAnswerList([...answerList, optionValue])
         setCurrentItem(currentItem + 1);
-        // if (currentItem === values.length - 1) {
-        //     setResultFlag(true);
-        // }
-        if (currentItem === values.length - 1 ) {
-            setCurrentItem(values.length - 1);
-
-        }
-        else if(answerList.length === values.length - 1)
-        {
+        if (currentItem === values.length - 1) {
             setEnable(true);
+            setCurrentItem(values.length - 1);
         }
         console.log(answerList)
     }
@@ -51,7 +44,6 @@ const QuizTest = () => {
 
     const handleQuestionId = (questionDetails)=>{
         console.log(questionDetails)
-        setCurrentItem(questionDetails.id - 1);
     }
     return (
         <div className='test-container'>
