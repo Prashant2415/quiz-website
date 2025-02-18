@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import "./styles.css"
 const QuizTest = () => {
     const location = useLocation();
@@ -50,7 +50,9 @@ const QuizTest = () => {
             <h1 className='heading'>{title}</h1>
             {resultFlag ? (
                 <div className="result-container">
-                    <p>{message}</p>
+                    <h1 className='result message'>{message}</h1>
+                    <p className='result-description-text'>{message === "Failed" ? `You need to learn more`: `You have scored 4/4`}</p>
+                    <Link className='link-button' to="/">Dashboard</Link>
                 </div>
             ) : (
                 <>

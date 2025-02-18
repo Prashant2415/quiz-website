@@ -171,3 +171,23 @@
     font-size: 14px;
     font-weight: 600;
 }
+
+.result-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.link-button{
+    text-decoration: none;
+    color: #ffffff;
+    background: #5DB996;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+}
+.link-button:hover{
+    color: #5DB996;
+    border: 1px solid #5DB996;
+    background: #ffffff;
+}
